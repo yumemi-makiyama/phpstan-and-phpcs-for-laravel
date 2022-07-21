@@ -4,7 +4,8 @@
         "dev": "vite",
         "build": "vite build",
         "prepare": "husky install",
-        "phpstan": "php -d 'memory_limit=1024M' vendor/bin/phpstan analyze"
+        "phpstan": "php -d 'memory_limit=1024M' vendor/bin/phpstan analyze",
+        "phpcs": "vendor/bin/php-cs-fixer --config=.php-cs-fixer.dist.php fix"
     },
     "devDependencies": {
         "axios": "^0.27",
@@ -17,7 +18,8 @@
     },
     "lint-staged": {
         "*.php": [
-            "yarn phpstan"
+            "yarn phpstan",
+            "yarn phpcs"
         ]
     }
 }
